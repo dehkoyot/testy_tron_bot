@@ -16,12 +16,11 @@ def main() -> None:
 
     logger.info("Starting the bot")
 
-    while True:
-        try:
-            application.run_polling()
-        except Exception as e:
-            logger.exception(f"An error occurred while running the bot: {e}")
-            time.sleep(10)
+    try:
+        application.run_polling()
+    except Exception as e:
+        logger.exception(f"An error occurred while running the bot: {e}")
+        time.sleep(10)
 
 
 if __name__ == '__main__':
